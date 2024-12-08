@@ -103,7 +103,7 @@ class Agent:
             for port in list(self.server_threads.keys()):
                 self.stop_http_server(port)
 
-    def kill_agent(self):
+    def terminate_agent(self):
         """Kill running agent."""
         logging.info("Received kill agent command, stopping the agent...")
         agent_running.clear()

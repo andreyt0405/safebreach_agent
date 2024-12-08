@@ -4,7 +4,7 @@ import logging
 import tornado.ioloop
 import tornado.web
 
-from method_handler import DNSQueryHandler, HTTPGetHandler, ServerStatusHandler, StartHttpServer, KillAgent
+from method_handler import DNSQueryHandler, HTTPGetHandler, ServerStatusHandler, StartHttpServer, TerminateAgent
 
 
 class TornadoHandler:
@@ -14,11 +14,11 @@ class TornadoHandler:
     def make_app(agent):
         """Create a Tornado application with additional routes."""
         return tornado.web.Application([
-            (r"/dns-query", DNSQueryHandler, dict(agent=agent)),
-            (r"/http-get", HTTPGetHandler, dict(agent=agent)),
-            (r"/server-status", ServerStatusHandler, dict(agent=agent)),
-            (r"/start-http-server", StartHttpServer, dict(agent=agent)),
-            (r"/kill-agent", KillAgent, dict(agent=agent)),
+            (r"/get-dns-query", DNSQueryHandler, dict(agent=agent)),
+            (r"/get-http-page", HTTPGetHandler, dict(agent=agent)),
+            (r"/get-server-status", ServerStatusHandler, dict(agent=agent)),
+            (r"/get-http-server", StartHttpServer, dict(agent=agent)),
+            (r"/get-terminate-agent", TerminateAgent, dict(agent=agent)),
         ])
 
     @staticmethod

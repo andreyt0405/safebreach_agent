@@ -69,7 +69,7 @@ This program implements an **Agent Management System**, designed to handle vario
 
 - **Request Example Start new server**:
   ```bash
-  curl "http://localhost:8080/start-http-server?port=9090"
+  curl "http://localhost:8080/get-http-server?port=9090"
 - **Response Example Start new server**:
   ```bash
   {"unique_id": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"}

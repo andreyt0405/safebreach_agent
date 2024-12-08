@@ -57,9 +57,9 @@ class StartHttpServer(tornado.web.RequestHandler):
         self.write({"unique_id": self.agent.start_http_server(port)})
 
 
-class KillAgent(tornado.web.RequestHandler):
+class TerminateAgent(tornado.web.RequestHandler):
     def initialize(self, agent):
         self.agent = agent
 
     def get(self):
-        self.write({"status_kill": self.agent.kill_agent()})
+        self.write({"terminate_status": self.agent.terminate_agent()})
